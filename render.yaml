@@ -27,4 +27,4 @@ services:
       - key: SUPPORT_LINK
         value: https://t.me/cypher_hex
       - key: PYTHON_VERSION
-        value: 3.11.4
+        value: 3.11.0
