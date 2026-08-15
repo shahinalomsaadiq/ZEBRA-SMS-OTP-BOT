@@ -87,7 +87,7 @@ ADMINS = [int(x.strip()) for x in os.environ.get("ADMINS", "6915207616").split("
 
 
 
-OTP_GROUP_ID = int(os.environ.get("OTP_GROUP_ID", "5547400032"))
+OTP_GROUP_ID = int(os.environ.get("OTP_GROUP_ID", "-5547400032"))
 
 
 
@@ -1123,19 +1123,19 @@ def main_keyboard(user_id):
 
     keyboard = [
 
-        [KeyboardButton(text=f"📞 {make_bold_unicode('GET NUMBER')}", style="primary")],
+        [KeyboardButton(text=f"📞 {make_bold_unicode('GET NUMBER')}")],
 
         [
 
-            KeyboardButton(text=f"👥 {make_bold_unicode('REFER AND EARN')}", style="primary"),
+            KeyboardButton(text=f"👥 {make_bold_unicode('REFER AND EARN')}"),
 
-            KeyboardButton(text=f"👤 {make_bold_unicode('PROFILE')}", style="primary")
+            KeyboardButton(text=f"👤 {make_bold_unicode('PROFILE')}")
 
         ],
 
-        [KeyboardButton(text=f"🏆 {make_bold_unicode('LEADERBOARD')}", style="primary")],
+        [KeyboardButton(text=f"🏆 {make_bold_unicode('LEADERBOARD')}")],
 
-        [KeyboardButton(text=f"💬 {make_bold_unicode('SUPPORT')}", style="primary")]
+        [KeyboardButton(text=f"💬 {make_bold_unicode('SUPPORT')}")]
 
     ]
 
@@ -1143,7 +1143,7 @@ def main_keyboard(user_id):
 
     if is_admin(user_id):
 
-        keyboard.append([KeyboardButton(text=f"⚙️ {make_bold_unicode('ADMIN PANEL')} ⚙️", style="danger")])
+        keyboard.append([KeyboardButton(text=f"⚙️ {make_bold_unicode('ADMIN PANEL')} ⚙️")])
 
 
 
@@ -1153,7 +1153,7 @@ def main_keyboard(user_id):
 
 def cancel_keyboard():
 
-    keyboard = [[KeyboardButton(f"❌ {make_bold_unicode('CANCEL')}", style="danger")]]
+    keyboard = [[KeyboardButton(f"❌ {make_bold_unicode('CANCEL')}")]]
 
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
@@ -1163,11 +1163,11 @@ def withdraw_method_keyboard():
 
     keyboard = ReplyKeyboardMarkup([
 
-        [KeyboardButton(f"📱 {make_bold_unicode('BKASH')}", style="primary"), KeyboardButton(f"💵 {make_bold_unicode('NAGAD')}", style="primary")],
+        [KeyboardButton(f"📱 {make_bold_unicode('BKASH')}"), KeyboardButton(f"💵 {make_bold_unicode('NAGAD')}")],
 
-        [KeyboardButton(f"🚀 {make_bold_unicode('ROCKET')}", style="primary"), KeyboardButton(f"🏦 {make_bold_unicode('BINANCE')}", style="primary")],
+        [KeyboardButton(f"🚀 {make_bold_unicode('ROCKET')}"), KeyboardButton(f"🏦 {make_bold_unicode('BINANCE')}")],
 
-        [KeyboardButton(f"❌ {make_bold_unicode('CANCEL')}", style="danger")]
+        [KeyboardButton(f"❌ {make_bold_unicode('CANCEL')}")]
 
     ], resize_keyboard=True)
 
@@ -1239,13 +1239,13 @@ def build_admin_main_inline_keyboard():
 
     buttons = [
 
-        [InlineKeyboardButton(make_bold_unicode("👥 USER MANAGEMENT"), callback_data="adm_menu_user_mgnt", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("👥 USER MANAGEMENT"), callback_data="adm_menu_user_mgnt")],
 
-        [InlineKeyboardButton(make_bold_unicode("⚙️ SYSTEM CONFIGURATION"), callback_data="adm_menu_sys_config", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("⚙️ SYSTEM CONFIGURATION"), callback_data="adm_menu_sys_config")],
 
-        [InlineKeyboardButton(make_bold_unicode("🛠️ MANAGE SERVICES"), callback_data="manage_svc_back_to_list", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("🛠️ MANAGE SERVICES"), callback_data="manage_svc_back_to_list")],
 
-        [InlineKeyboardButton(make_bold_unicode("🔙 BACK TO MAIN MENU"), callback_data="adm_menu_back_to_main", style="danger")]
+        [InlineKeyboardButton(make_bold_unicode("🔙 BACK TO MAIN MENU"), callback_data="adm_menu_back_to_main")]
 
     ]
 
@@ -1257,13 +1257,13 @@ def build_user_management_inline_keyboard():
 
     buttons = [
 
-        [InlineKeyboardButton(make_bold_unicode("📢 BROADCAST TO ALL"), callback_data="adm_usermgnt_broadcast", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("📢 BROADCAST TO ALL"), callback_data="adm_usermgnt_broadcast")],
 
-        [InlineKeyboardButton(make_bold_unicode("🆔 GET ALL USER ID"), callback_data="adm_usermgnt_get_ids", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("🆔 GET ALL USER ID"), callback_data="adm_usermgnt_get_ids")],
 
-        [InlineKeyboardButton(make_bold_unicode("💰 ALL USER BALANCE"), callback_data="adm_usermgnt_all_balance", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("💰 ALL USER BALANCE"), callback_data="adm_usermgnt_all_balance")],
 
-        [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin", style="danger")]
+        [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin")]
 
     ]
 
@@ -1277,31 +1277,31 @@ def build_system_config_inline_keyboard():
 
         [
 
-            InlineKeyboardButton(make_bold_unicode("📈 SYSTEM STATS"), callback_data="adm_sys_stats", style="primary"),
+            InlineKeyboardButton(make_bold_unicode("📈 SYSTEM STATS"), callback_data="adm_sys_stats"),
 
-            InlineKeyboardButton(make_bold_unicode("👤 USER CHECK"), callback_data="adm_sys_user_check", style="primary")
+            InlineKeyboardButton(make_bold_unicode("👤 USER CHECK"), callback_data="adm_sys_user_check")
 
         ],
 
         [
 
-            InlineKeyboardButton(make_bold_unicode("⛔ BAN USER"), callback_data="adm_sys_ban", style="danger"),
+            InlineKeyboardButton(make_bold_unicode("⛔ BAN USER"), callback_data="adm_sys_ban"),
 
-            InlineKeyboardButton(make_bold_unicode("🔓 UNBAN USER"), callback_data="adm_sys_unban", style="success")
+            InlineKeyboardButton(make_bold_unicode("🔓 UNBAN USER"), callback_data="adm_sys_unban")
 
         ],
 
-        [InlineKeyboardButton(make_bold_unicode("📜 BANNED LIST"), callback_data="adm_sys_banned_list", style="primary")],
+        [InlineKeyboardButton(make_bold_unicode("📜 BANNED LIST"), callback_data="adm_sys_banned_list")],
 
         [
 
-            InlineKeyboardButton(make_bold_unicode("➕ ADD BALANCE"), callback_data="adm_sys_add_bal", style="success"),
+            InlineKeyboardButton(make_bold_unicode("➕ ADD BALANCE"), callback_data="adm_sys_add_bal"),
 
-            InlineKeyboardButton(make_bold_unicode("➖ REMOVE BALANCE"), callback_data="adm_sys_rem_bal", style="danger")
+            InlineKeyboardButton(make_bold_unicode("➖ REMOVE BALANCE"), callback_data="adm_sys_rem_bal")
 
         ],
 
-        [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin", style="danger")]
+        [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin")]
 
     ]
 
@@ -1319,11 +1319,11 @@ def build_manage_services_inline_keyboard():
 
         sid = s.get("sid", "UNKNOWN")
 
-        buttons.append([InlineKeyboardButton(make_bold_unicode(f"📁 {sid.upper()}"), callback_data=f"manage_svc_view_{sid}", style="primary")])
+        buttons.append([InlineKeyboardButton(make_bold_unicode(f"📁 {sid.upper()}"), callback_data=f"manage_svc_view_{sid}")])
 
-    buttons.append([InlineKeyboardButton(make_bold_unicode("➕ ADD SERVICE"), callback_data="manage_svc_add", style="success")])
+    buttons.append([InlineKeyboardButton(make_bold_unicode("➕ ADD SERVICE"), callback_data="manage_svc_add")])
 
-    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin", style="danger")])
+    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin")])
 
     return InlineKeyboardMarkup(buttons)
 
@@ -1351,25 +1351,25 @@ def build_service_detail_keyboard(service_name):
 
         flag = info["flag"]
 
-        buttons.append([InlineKeyboardButton(make_bold_unicode(f"{flag} {cname.upper()}"), callback_data=f"manage_svc_country_view_{service_name}_{cname}", style="primary")])
+        buttons.append([InlineKeyboardButton(make_bold_unicode(f"{flag} {cname.upper()}"), callback_data=f"manage_svc_country_view_{service_name}_{cname}")])
 
         
 
     buttons.append([
 
-        InlineKeyboardButton(make_bold_unicode("➕ ADD RANGE"), callback_data=f"manage_svc_add_range_{service_name}", style="success"),
+        InlineKeyboardButton(make_bold_unicode("➕ ADD RANGE"), callback_data=f"manage_svc_add_range_{service_name}"),
 
-        InlineKeyboardButton(make_bold_unicode("✏️ RENAME"), callback_data=f"manage_svc_rename_init_{service_name}", style="primary")
+        InlineKeyboardButton(make_bold_unicode("✏️ RENAME"), callback_data=f"manage_svc_rename_init_{service_name}")
 
     ])
 
     buttons.append([
 
-        InlineKeyboardButton(make_bold_unicode("🗑️ DELETE SERVICE"), callback_data=f"manage_svc_delete_init_{service_name}", style="danger")
+        InlineKeyboardButton(make_bold_unicode("🗑️ DELETE SERVICE"), callback_data=f"manage_svc_delete_init_{service_name}")
 
     ])
 
-    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="manage_svc_back_to_list", style="danger")])
+    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="manage_svc_back_to_list")])
 
     return InlineKeyboardMarkup(buttons)
 
@@ -1399,9 +1399,9 @@ def build_country_detail_keyboard(service_name, country_name):
 
         buttons.append([
 
-            InlineKeyboardButton(make_bold_unicode(f"❌ {r_val}"), callback_data=f"manage_svc_delete_range_{service_name}_{country_name}_{r_val}", style="danger"),
+            InlineKeyboardButton(make_bold_unicode(f"❌ {r_val}"), callback_data=f"manage_svc_delete_range_{service_name}_{country_name}_{r_val}"),
 
-            InlineKeyboardButton(make_bold_unicode("✏️ EDIT"), callback_data=f"manage_svc_edit_range_init_{service_name}_{country_name}_{r_val}", style="primary")
+            InlineKeyboardButton(make_bold_unicode("✏️ EDIT"), callback_data=f"manage_svc_edit_range_init_{service_name}_{country_name}_{r_val}")
 
         ])
 
@@ -1409,15 +1409,15 @@ def build_country_detail_keyboard(service_name, country_name):
 
     buttons.append([
 
-        InlineKeyboardButton(make_bold_unicode("➕ ADD RANGE"), callback_data=f"manage_svc_add_range_{service_name}_{country_name}", style="success"),
+        InlineKeyboardButton(make_bold_unicode("➕ ADD RANGE"), callback_data=f"manage_svc_add_range_{service_name}_{country_name}"),
 
-        InlineKeyboardButton(make_bold_unicode("✏️ RENAME COUNTRY"), callback_data=f"manage_svc_rename_country_init_{service_name}_{country_name}", style="primary")
+        InlineKeyboardButton(make_bold_unicode("✏️ RENAME COUNTRY"), callback_data=f"manage_svc_rename_country_init_{service_name}_{country_name}")
 
     ])
 
-    buttons.append([InlineKeyboardButton(make_bold_unicode("🗑️ DELETE COUNTRY"), callback_data=f"manage_svc_delete_country_confirm_{service_name}_{country_name}", style="danger")])
+    buttons.append([InlineKeyboardButton(make_bold_unicode("🗑️ DELETE COUNTRY"), callback_data=f"manage_svc_delete_country_confirm_{service_name}_{country_name}")])
 
-    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data=f"manage_svc_view_{service_name}", style="primary")])
+    buttons.append([InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data=f"manage_svc_view_{service_name}")])
 
     return InlineKeyboardMarkup(buttons)
 
@@ -2005,7 +2005,7 @@ def _build_services_keyboard(services):
 
         
 
-        temp_btns.append(InlineKeyboardButton(label, callback_data=f"svc_{i}", style="primary"))
+        temp_btns.append(InlineKeyboardButton(label, callback_data=f"svc_{i}"))
 
         
 
@@ -2045,11 +2045,11 @@ def _build_countries_keyboard(ranges, service_idx):
 
             seen[label] = i
 
-            btns.append(InlineKeyboardButton(label, callback_data=f"rng_{i}", style="primary"))
+            btns.append(InlineKeyboardButton(label, callback_data=f"rng_{i}"))
 
     rows = [btns[j:j+2] for j in range(0, len(btns), 2)]
 
-    rows.append([InlineKeyboardButton("◀️ BACK", callback_data="back_services", style="danger")])
+    rows.append([InlineKeyboardButton("◀️ BACK", callback_data="back_services")])
 
     return InlineKeyboardMarkup(rows)
 
@@ -2306,9 +2306,9 @@ async def monitor_loop(app):
 
                             [
 
-                                InlineKeyboardButton("‼️ PANEL", url="https://t.me/ZebraXSupport0", style="primary"),
+                                InlineKeyboardButton("‼️ PANEL", url="https://t.me/ZebraXSupport0"),
 
-                                InlineKeyboardButton("📢 CHANNEL", url="https://t.me/ZebraXSupport0", style="primary")
+                                InlineKeyboardButton("📢 CHANNEL", url="https://t.me/ZebraXSupport0")
 
                             ]
 
@@ -2520,7 +2520,7 @@ async def fast_allocate_number_multi(query, context, ranges_list, sid):
 
                 reply_markup=InlineKeyboardMarkup([[
 
-                    InlineKeyboardButton("🔙 BACK", callback_data="back_services", style="danger")
+                    InlineKeyboardButton("🔙 BACK", callback_data="back_services")
 
                 ]])
 
@@ -2596,9 +2596,9 @@ async def fast_allocate_number_multi(query, context, ranges_list, sid):
 
     keyboard = InlineKeyboardMarkup([
 
-        [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range", style="primary")],
+        [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range")],
 
-        [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0", style="primary")]
+        [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0")]
 
     ])
 
@@ -2744,9 +2744,9 @@ async def process_auto_number(update, context, range_text):
 
         keyboard = InlineKeyboardMarkup([
 
-            [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range", style="primary")],
+            [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range")],
 
-            [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0", style="primary")]
+            [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0")]
 
         ])
 
@@ -2914,9 +2914,9 @@ async def process_numbers(update_or_query, context, range_text, count):
 
         keyboard = InlineKeyboardMarkup([
 
-            [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range", style="primary")],
+            [InlineKeyboardButton("🔄 SAME RANGE", callback_data="same_range")],
 
-            [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0", style="primary")]
+            [InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0")]
 
         ])
 
@@ -2998,7 +2998,7 @@ async def refer_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         reply_markup=InlineKeyboardMarkup([[
 
-            InlineKeyboardButton("👥 YOUR REFERRAL", callback_data=f"my_ref_{uid}", style="primary")
+            InlineKeyboardButton("👥 YOUR REFERRAL", callback_data=f"my_ref_{uid}")
 
         ]])
 
@@ -3180,9 +3180,9 @@ async def withdraw_number_received(update: Update, context: ContextTypes.DEFAULT
 
         reply_markup=InlineKeyboardMarkup([[
 
-            InlineKeyboardButton("❌ CANCEL", callback_data="withdraw_cancel", style="danger"),
+            InlineKeyboardButton("❌ CANCEL", callback_data="withdraw_cancel"),
 
-            InlineKeyboardButton("✅ CONFIRM", callback_data="withdraw_confirm", style="success")
+            InlineKeyboardButton("✅ CONFIRM", callback_data="withdraw_confirm")
 
         ]])
 
@@ -3276,9 +3276,9 @@ async def process_withdraw_confirm(update: Update, context: ContextTypes.DEFAULT
 
     admin_kb = InlineKeyboardMarkup([[
 
-        InlineKeyboardButton("❌ REJECT", callback_data=f"admin_reject_{payment_id}", style="danger"),
+        InlineKeyboardButton("❌ REJECT", callback_data=f"admin_reject_{payment_id}"),
 
-        InlineKeyboardButton("✅ APPROVE", callback_data=f"admin_approve_{payment_id}", style="success")
+        InlineKeyboardButton("✅ APPROVE", callback_data=f"admin_approve_{payment_id}")
 
     ]])
 
@@ -4162,9 +4162,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             reply_markup=InlineKeyboardMarkup([
 
-                [InlineKeyboardButton(make_bold_unicode("📂 CHECK ALL DATA"), callback_data=f"full_logs_{target_uid}", style="primary")],
+                [InlineKeyboardButton(make_bold_unicode("📂 CHECK ALL DATA"), callback_data=f"full_logs_{target_uid}")],
 
-                [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin", style="danger")]
+                [InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_back_to_admin")]
 
             ])
 
@@ -4300,9 +4300,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         keyboard = InlineKeyboardMarkup([
 
-            [InlineKeyboardButton("💬 SUPPORT", url=SUPPORT_LINK, style="primary")],
+            [InlineKeyboardButton("💬 SUPPORT", url=SUPPORT_LINK)],
 
-            [InlineKeyboardButton("👨‍💻 DEVELOPER", url="https://t.me/ZebraXSupport0", style="danger")]
+            [InlineKeyboardButton("👨‍💻 DEVELOPER", url="https://t.me/ZebraXSupport0")]
 
         ])
 
@@ -4924,7 +4924,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_user_mgnt", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_user_mgnt")]])
 
         )
 
@@ -4994,7 +4994,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         )
 
-        await query.message.edit_text(msg, parse_mode="HTML", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config", style="danger")]]))
+        await query.message.edit_text(msg, parse_mode="HTML", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config")]]))
 
         return
 
@@ -5010,7 +5010,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config")]])
 
         )
 
@@ -5028,7 +5028,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config")]])
 
         )
 
@@ -5046,7 +5046,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config")]])
 
         )
 
@@ -5060,7 +5060,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         if not banned_list:
 
-            await query.message.edit_text("📜 NO BANNED USERS.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config", style="danger")]]))
+            await query.message.edit_text("📜 NO BANNED USERS.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config")]]))
 
             return
 
@@ -5072,7 +5072,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         text += f"\n📊 Total: {len(banned_list)}"
 
-        await query.message.edit_text(text, parse_mode="HTML", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config", style="danger")]]))
+        await query.message.edit_text(text, parse_mode="HTML", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("🔙 BACK"), callback_data="adm_menu_sys_config")]]))
 
         return
 
@@ -5088,7 +5088,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config")]])
 
         )
 
@@ -5106,7 +5106,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="adm_menu_sys_config")]])
 
         )
 
@@ -5148,7 +5148,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="manage_svc_back_to_list", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data="manage_svc_back_to_list")]])
 
         )
 
@@ -5174,7 +5174,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_view_{svc_name}", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_view_{svc_name}")]])
 
         )
 
@@ -5192,9 +5192,9 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             [
 
-                InlineKeyboardButton(make_bold_unicode("✅ CONFIRM"), callback_data=f"manage_svc_delete_do_{svc_name}", style="danger"),
+                InlineKeyboardButton(make_bold_unicode("✅ CONFIRM"), callback_data=f"manage_svc_delete_do_{svc_name}"),
 
-                InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_view_{svc_name}", style="primary")
+                InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_view_{svc_name}")
 
             ]
 
@@ -5368,7 +5368,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=cancel_cb, style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=cancel_cb)]])
 
         )
 
@@ -5464,9 +5464,9 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             [
 
-                InlineKeyboardButton(make_bold_unicode("✅ CONFIRM"), callback_data=f"manage_svc_delete_country_do_{svc_name}_{country_name}", style="danger"),
+                InlineKeyboardButton(make_bold_unicode("✅ CONFIRM"), callback_data=f"manage_svc_delete_country_do_{svc_name}_{country_name}"),
 
-                InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}", style="primary")
+                InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}")
 
             ]
 
@@ -5576,7 +5576,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}")]])
 
         )
 
@@ -5614,7 +5614,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             parse_mode="HTML",
 
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}", style="danger")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(make_bold_unicode("❌ CANCEL"), callback_data=f"manage_svc_country_view_{svc_name}_{country_name}")]])
 
         )
 
@@ -5804,7 +5804,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
                 await query.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup([[
 
-                    InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0", style="primary")
+                    InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0")
 
                 ]]))
 
