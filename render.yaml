@@ -1,0 +1,30 @@
+# ZEBRA SMS Bot - Render Blueprint
+# এই ফাইলটি Render Dashboard-এ Blueprint হিসেবে ব্যবহার করতে পারো
+# অথবা ম্যানুয়ালি "New Background Worker" তৈরি করতে পারো
+
+services:
+  - type: worker
+    name: zebra-sms-bot
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      # 🔴 অবশ্যই Render Dashboard-এ সেট করো (Git-এ রাখবে না!)
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: ADMINS
+        sync: false
+      - key: OTP_GROUP_ID
+        sync: false
+
+      # 🟡 নিচের গুলো তোমার ইচ্ছামতো পরিবর্তন করো
+      - key: BASE_URL
+        value: https://zebrasms.com/api/v1
+      - key: SUPPORT_LINK
+        value: https://t.me/cypher_hex
+      - key: PYTHON_VERSION
+        value: 3.11.4
