@@ -14,9 +14,11 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 
 # ==================== CONFIG SECTION ====================
 
-BOT_TOKEN = "8876104251:AAHBLfQ8AZQ_d5SvqiHh8kHYC5T0kItpcG0"
-API_KEY = "8U73CV8X4LT"
-BASE_URL = "https://zebrasms.com/api/v1"           # প্যানেল ডোমেন
+import os
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8876104251:AAHBLfQ8AZQ_d5SvqiHh8kHYC5T0kItpcG0")
+API_KEY = os.environ.get("API_KEY", "8U73CV8X4LT")
+BASE_URL = os.environ.get("BASE_URL", "https://zebrasms.com/api/v1")           # প্যানেল ডোমেন
 USER_DATA_FILE = "users.json"
 PAID_SMS_FILE = "paid_sms.json"
 STATS_FILE = "user_stats.json"
@@ -28,9 +30,9 @@ DATA_RANGE_FILE = "datarange.json"
 CUSTOM_SERVICES_FILE = "custom_services.json"
 
 # ==================== MULTIPLE ADMINS CONFIGURATION ====================
-ADMINS = [6915207616]
+ADMINS = [int(x.strip()) for x in os.environ.get("ADMINS", "6915207616").split(",") if x.strip()]
 
-OTP_GROUP_ID = --5547400032
+OTP_GROUP_ID = int(os.environ.get("OTP_GROUP_ID", "-5547400032"))
 
 # ==================== WELCOME MESSAGE CONFIGURATION ====================
 WELCOME_MESSAGE = """⚡ 𝗭𝗘𝗕𝗥𝗔 𝗦𝗠𝗦 𝗣𝗔𝗡𝗘𝗟 𝗕𝗢𝗧 ⚡ 
@@ -46,7 +48,7 @@ MIN_WITHDRAW = 50
 MAX_WITHDRAW = 10000
 
 # ==================== SUPPORT LINK (EDITABLE) ====================
-SUPPORT_LINK = "https://t.me/cypher_hex"      # সাপোর্ট লিংক পরিবর্তনযোগ্য
+SUPPORT_LINK = os.environ.get("SUPPORT_LINK", "https://t.me/cypher_hex")      # সাপোর্ট লিংক পরিবর্তনযোগ্য
 
 request_queue = asyncio.Queue()
 MAX_WORKERS = 50000000000000000000000000000
@@ -56,9 +58,8 @@ client_async = httpx.AsyncClient(
     http2=True,
     timeout=httpx.Timeout(connect=3.0, read=30.0, write=5.0, pool=15.0),
     headers={
-        "X-API-Key": API_KEY,
-        "api-key": API_KEY,
-        "Authorization": f"Bearer {API_KEY}",
+        "MAuth": API_KEY,
+        "Content-Type": "application/json",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json, text/plain, */*",
         "Connection": "keep-alive"
