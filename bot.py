@@ -17,7 +17,7 @@ BOT_TOKEN = "8252061401:AAFK5wXve9Ut_atSQ937pol3Kf_BhaUH5YI"           # ⚠️ 
 CHANNEL_ID = "@Cypher_HEX_OTP_Channel"                                 # ⚠️ OTP ফরওয়ার্ড চ্যানেল
 FORCE_JOIN_CHANNEL = "@zebra_sms"                                     # ⚠️ Force Join চ্যানেল
 OWNER_ID = "6915207616"                                                # ⚠️ আপনার Numeric Telegram ID দিন (যেমন 123456789)
-WEBHOOK_URL = "https://cypher-hex-otp-bot-2.onrender.com"             # ⚠️ আপনার Render লিংক (শেষে / দিবেন না)
+WEBHOOK_URL = "https://zebra-sms-otp-bot.onrender.com/"             # ⚠️ আপনার Render লিংক (শেষে / দিবেন না)
 BASE_URL = "https://zebrasms.com/api/v1"
 DB_FILE = "user_data.json"
 # ===============================================================
