@@ -14,7 +14,7 @@ import httpx
 
 import pyotp
 
-import random
+import randomF
 
 import string
 
@@ -5804,7 +5804,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
                 await query.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup([[
 
-                    InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/ZebraXSupport0")
+                    InlineKeyboardButton("📢 OTP GROUP", url="https://t.me/zebrasmsotpgroup")
 
                 ]]))
 
